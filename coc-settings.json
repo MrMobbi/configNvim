@@ -1,3 +1,5 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "inlayHint.enable": false,
 }
