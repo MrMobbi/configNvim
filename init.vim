@@ -1,4 +1,6 @@
 "	### Set Utils ###"
+"
+let g:polyglot_disabled = ['markdown']
 set number
 set mouse=a
 set noswapfile
@@ -23,10 +25,15 @@ call plug#begin('~/.vim/plugged')
 "	### Sercher for files ###"
 	Plug 'nvim-telescope/telescope.nvim'
 
-"	### Harpoon ###"
+"	### Syntax for assambly ###"
+	Plug 'vim-scripts/asmx86_64'
+	Plug 'good5dog5/arm.vim'
 
 " 	### Color scheme and vim airline ###"
+ 	Plug 'flazz/vim-colorschemes'
  	Plug 'morhetz/gruvbox'
+	Plug 'sainnhe/vim-color-forest-night'
+	Plug 'junegunn/seoul256.vim'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 
@@ -48,9 +55,10 @@ if has('termguicolors')
 	set termguicolors
 endif
 
-colorscheme gruvbox
-
+colorscheme everforest
 set background=light
+let g:everforest_background='soft'
+
 
 "	### Coc config ###"
 " TextEdit might fail if hidden is not set.
@@ -91,8 +99,6 @@ let g:coc_global_extensions = [
 	\ 'coc-docker', 
 	\ ]
 
-"	### Indent Option ###"
-
 "	### Bookmakrs for fancy starter ###"
 let g:startify_bookmarks = [
 	\ { 'z' : '~/.zshrc' },
@@ -120,6 +126,10 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 "	### Maping of the navigation folder ###"
 nnoremap <leader>pv :Ex<CR>
 
+"	### Maping of Semantic assambly ###"
+nnoremap <leader>sa :set syntax=asmx86_64<CR>
+
+"	### Maping of Semantic Highlight ###"
 nnoremap <leader>ss :SemanticHighlightToggle<CR>
 
 "	### maping of nerdtree ###"
